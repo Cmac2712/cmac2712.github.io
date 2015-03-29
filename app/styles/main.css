@@ -1,0 +1,105 @@
+@charset "UTF-8";
+@import url(../bower_components/bootstrap/dist/css/bootstrap.css);
+/* VARIABLES */
+body {
+  background-color: #eee;
+  color: #666;
+  font-family: 'Raleway', helvetica, sans-serif;
+}
+
+header h1 {
+  text-align: center;
+}
+
+.commentBox,
+.commentList {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.viewer {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  padding: 24px;
+  height: 400px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.viewer:after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.viewer img {
+  display: inline-block;
+  vertical-align: middle;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  max-width: 100%;
+}
+
+.viewer a {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 200px;
+  margin-left: -100px;
+  padding: 12px;
+  color: #666;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+}
+
+.row,
+.header {
+  text-align: center;
+}
+
+.thumbnail {
+  margin: 24px auto;
+  background-size: cover;
+  width: 75px;
+  height: 75px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: box-shadow, .25s ease;
+  transition: box-shadow, .25s ease;
+}
+
+.thumbnail:hover {
+  box-shadow: 2px 8px 12px rgba(0, 0, 0, 0.2);
+  -webkit-transform: translate3d(0, -2px, 0);
+  transform: translate3d(0, -2px, 0);
+  -webkit-transition: box-shadow, .25s ease;
+  transition: box-shadow, .25s ease;
+}
+
+footer {
+  display: table;
+  width: 100%;
+  background-color: #ccc;
+  padding: 24px;
+  margin-top: 60px;
+  text-align: right;
+}
+
+footer p {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* Media Queries
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Larger than mobile */
+/* Larger than phablet (also point when grid becomes active) */
+/* Larger than tablet */
+/* Larger than desktop */
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {
+  .container {
+    width: 970px;
+  }
+}
