@@ -1,0 +1,28 @@
+body {
+  font-family: 'Raleway', helvetica;
+  background-color: #dddddd;
+  color: #444444;
+  padding: 12px;
+}
+aside {
+  display: inline-block;
+  margin-bottom: 12px;
+}
+a {
+  color: #66a;
+}
+hr {
+  border-color: #aaa;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: right;
+  background-color: #bbbbbb;
+  padding: 12px;
+}
+footer a {
+  display: inline-block;
+}
