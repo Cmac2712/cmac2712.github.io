@@ -4,6 +4,9 @@ body {
   color: #444444;
   padding: 12px;
 }
+h1 {
+  padding-bottom: 24px;
+}
 aside {
   display: inline-block;
   margin-bottom: 12px;
