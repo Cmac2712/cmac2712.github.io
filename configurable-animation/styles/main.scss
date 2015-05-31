@@ -1,0 +1,917 @@
+/**
+*
+* @author Craig MacIntre
+* @email cmac2712@gmail.com
+*
+* CONTENTS
+* 
+* PREFACE
+* itcss..........................................Inverse Triangle CSS
+* BEM............................................Block Element Modifier naming convention
+*
+* SETTINGS
+* Typography.....................................Fonts and font stacks
+* Colors.........................................Set our brand color and UI colors
+* Spacing........................................Base spacing units for nice even spacing
+*
+* TOOLS
+* Mixins.........................................Usefull mixins
+* Bourbon........................................Library of Mixins and functions (bourbon.io)
+* Neat...........................................Grid system base on mixins for more semantic HTML (neat.bourbon.io)
+
+* GENERIC
+* Box Sizing.....................................Set box-sizing: border-box;
+* Breakpoints....................................Media Queries for different screen sizes (technically should be in settings but we need to include it after Neat)
+* Browse Happy...................................Styling for Browse Happy for unsupported browsers
+*
+* BASE
+* body...........................................Set up our root styles
+* h1-h6..........................................Headers
+* ul.............................................Lists
+* a..............................................Links
+*
+* OBJECTS
+* Wrap...........................................Keep our content contained to a max-width
+* Underline......................................Underlines for headers
+* Buttons........................................Material Design style buttons
+*
+* COMPONENTS
+* Header.........................................Header areaa
+* Navigation.....................................Nav menu
+* Notifications..................................Notification box
+* Profile........................................Profile picture
+* Animator Configurator..........................Settings menu for configuring header animation
+* About Section..................................Short Description about myself
+* Work Section...................................List of some of my projects
+* Skills and Tools Grid..........................Fluid grid setup for Skills and Tools section (identical layout)
+* Contact Section................................Contact information
+* Footer.........................................Footer area
+*
+* TRUMPS
+* Vertical Centering.............................Ghost element inline-block vertical-align: middle for aligning elements
+* Positioning....................................Absolute/relative positionsa
+* Floats.........................................Add/remove floats
+* Text Alignments................................Align text left/right/center
+* Font Weights...................................Change font weights
+* Margins/Padding................................Add/Remove margins and padding
+* .brandColor....................................Last class in the stylesheet so it can easily be found with javascript
+*
+*
+*/
+
+/*----------------------------------------------------------------
+
+    ITCSS http://itcss.io/
+
+------------------------------------------------------------------
+
+Inverted Triangle CSS
+
+================SETTINGS==============LOW SPECIFICITY
+--==============TOOLS===============--
+----============GENERIC===========----
+-----===========BASE============------
+--------========OBJECTS=======--------
+----------======COMPONENTS==----------
+------------====TRUMPS====------------HIGH SPECIFICITY
+
+SETTINGS   - Variables 
+TOOLS      - Mixins and functions
+GENERIC    - Ground Zero styles i.e normalize.css, box-sizing
+BASE       - Unclassed HTML elements i.e h1, h2, ul, a
+OBJECTS    - OOCSS Design patterns
+COMPONENTS - More explicit
+TRUMPS     - Overides, helpers, utilities. Usually carry !important
+
+
+
+
+--------------------------------------------------------------------
+
+    BEM https://bem.info/method/
+
+--------------------------------------------------------------------
+
+Block Element Modifier
+
+.block__element--modifier
+
+Example:
+
+  css:
+
+    .list {
+      margin: 0;
+      padding:0;
+    }
+
+    .list__item {
+      display: inline-block;
+    }
+
+    .list__item--active {
+      color: #f00;
+    }
+
+  html:
+
+    <ul class="list">
+      <li class="list__item">Item 01</li>
+      <li class="list__item">Item 02</li>
+      <li class="list__item list__item--active">Item 03</li>
+      <li class="list__item">Item 04</li>
+    </ul>
+
+
+--------------------------------------------------------------------
+------------------------------------------------------------------*/
+
+
+
+/*-----------------------------*\
+
+SETTINGS
+
+\*-----------------------------*/
+
+
+// Typography
+@import 'fonts';
+$font-size: 16px;
+$font-stack: 'latoregular', helvetica, sans-serif;
+$font-stack--header: 'noto', serif;
+//$icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+
+// Colors
+$ui-color:             #eee;
+$ui-color--shade:      darken($ui-color, 10%);
+$ui-color--tint:       lighten($ui-color, 10%);
+$brand-color:          #d66;
+$brand-color--shade:   darken($brand-color, 20%);
+$accent-color:         #777;
+
+$heading-color:        #444;
+$font-color:           #666;
+$font-color--tint:     lighten($font-color, 7.5%);
+$font-color--inverted: #fff;
+$font-color__para:     lighten($font-color, 15%);
+$icon-color:           $brand-color;
+$invert-color:         #eee;
+
+// Spacing
+$spacing-unit:         15px;
+$spacing-unit--double: $spacing-unit*2;
+$spacing-unit--half:   $spacing-unit/2;
+
+
+
+
+/*-----------------------------*\
+
+TOOLS
+
+\*-----------------------------*/
+
+
+//@mixin trans($to, $from, $attr: background, $time: .25s) {
+//  
+//  #{$attr}: #{$from};
+//  -webkit-transition: #{$attr}, #{$time};
+//          transition: #{$attr}, #{$time};
+//
+//  &:hover{
+//    #{$attr}: #{$to};
+//    -webkit-transition: #{$attr}, #{$time};
+//            transition: #{$attr}, #{$time};
+//  }
+//}
+
+@mixin shadow () {
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26);
+}
+
+@import '../bower_components/bourbon/app/assets/stylesheets/bourbon';
+@import '../bower_components/neat/app/assets/stylesheets/neat';
+
+
+/*-----------------------------*\
+
+GENERIC
+
+\*-----------------------------*/
+
+$border-box-sizing: true; 
+
+@import '../bower_components/normalize.css/normalize.css';
+$visual-grid: true; 
+
+// Breakpoints
+$palm: new-breakpoint(max-width 400px 12);
+$lap:  new-breakpoint(max-width 768px min-width 400px 12);
+$desk: new-breakpoint(max-width 1040px min-width 768px 12);
+
+
+.browsehappy {
+    margin: 0.2em 0; 
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/*-----------------------------*\
+  
+BASE
+
+\*-----------------------------*/
+
+
+body {
+    font-family: $font-stack;
+    color: $font-color;
+    background-color: $ui-color;
+    font-size: $font-size;
+}
+
+body:after {
+    content: "";
+    background-color: $brand-color--shade;
+}
+
+p {
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: $heading-color;
+    font-family: $font-stack--header;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: square;
+    list-style-position: outside;
+}
+
+li {
+    margin-bottom: $spacing-unit/2;
+}
+
+a:link {
+    color: #22a;
+    text-decoration: none;
+    -webkit-transition: color, .25s;
+    transition: color, .25s;
+}
+
+a:hover,
+a:visited,
+a:focus,
+a:active {
+    text-decoration: none;
+    color: #72a;
+    -webkit-transition: color, .25s;
+    transition: color, .25s;
+}
+
+
+
+
+
+/*-----------------------------*\
+
+OBJECTS 
+
+\*-----------------------------*/
+
+
+.wrap {
+    max-width: 1070px;
+    padding: $spacing-unit;
+    margin: 0 auto;
+    overflow: visible;
+}
+
+.underline {
+    position: relative;
+    margin-bottom: $spacing-unit*3;
+}
+
+.underline:after {
+    content: "";
+    position: absolute;
+    border-bottom: 3px solid $brand-color;
+    bottom: -$spacing-unit/1.5;
+    left: 0;
+    width: $spacing-unit*3;
+}
+
+.button--material {
+    transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2,1);
+    transition-delay: 0.2s;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26);
+}
+
+.button--material:focus {
+    outline: 0;
+}
+
+.button--material:active {
+      box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+      transition-delay: 0s;
+    }
+
+/*-----------------------------*\
+
+COMPONENTS 
+
+\*-----------------------------*/
+
+/**
+* HEADER
+*/
+
+header {
+    position: relative;
+    height: $spacing-unit*15;
+    background-color: $brand-color--shade;
+    @include shadow();
+}
+
+header h1 {
+    position: relative;
+    color: $invert-color;
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, .25);
+    z-index: 5;
+}
+
+header p {
+    position: relative;
+    z-index: 5;
+    color: $ui-color;
+}
+
+canvas {
+    //position: absolute;
+    //left: 0;
+    display: block;
+    z-index: 4;
+    margin: 0 auto;
+    @include shadow();
+}
+
+header .wrap {
+    height: 100%;
+}
+
+.header--title {
+    position: absolute;
+    bottom: 0;
+    left: $spacing-unit;
+    text-align: left;
+}
+
+/**
+* NAVIGATION
+*/
+
+.wrap--nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 9;
+}
+
+nav .nav__button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    font-size: $font-size*1.6;
+    color: $font-color--inverted;
+    padding: $spacing-unit;
+    z-index: 999;
+   // text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+}
+
+nav {
+    position: absolute;
+    top: $spacing-unit;
+    right: $spacing-unit--half;
+    display: inline-block;
+    z-index: 999999;
+    background-color: transparent; 
+    width: $spacing-unit*10;
+    border-radius: 2px;
+    overflow: hidden;
+    max-height: 50px;
+    transition: background-color .25s, ease;
+}
+
+nav.open {
+    // max-width: 500px;
+    // max-height: 500px;
+    max-height: 1000px;
+    background-color: $ui-color--shade; 
+    transition: background-color .25s, ease;
+    @include shadow();
+}
+
+nav.open .nav__button {
+    color: $brand-color;
+}
+
+nav.open .nav-list {
+    left: 0;
+    opacity: 1;
+}
+
+.nav-list {
+    position: relative;
+    left: -$spacing-unit*20;
+    list-style-type: none;
+    padding-top: $spacing-unit*4;
+    text-align: right;
+}
+
+nav ul.nav-list li a:hover {
+    color: $ui-color;
+    background-color: $brand-color;
+}
+
+.nav-list li {
+    width: 100%;
+}
+
+.nav-list li a {
+    display: inline-block;
+    color: $font-color--tint;
+    font-weight: bold;
+    padding: $spacing-unit/2 $spacing-unit $spacing-unit/2 $spacing-unit;
+    width: 100%;
+}
+
+/**
+* Notifications
+*/
+
+.notify {
+    position: fixed;
+    right: $spacing-unit--half;
+    top: $spacing-unit--half;
+    width: $spacing-unit*25;
+    background-color: $ui-color--tint;
+    z-index: 99999;
+    -webkit-transform: translate3d(0,-500px,0);
+	    transform: translate3d(0,-500px,0);
+    transition: transform .5s ease;
+    transition: -webkit-transform .5s ease;
+    @include shadow();
+}
+
+.notify.active {
+    -webkit-transform: translate3d(0,0,0);
+	    transform: translate3d(0,0,0);
+    transition: transform .5s ease;
+    transition: -webkit-transform .5s ease;
+}
+
+.notify__img {
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin-right: $spacing-unit--half;  
+    background-image: url(../images/view-from-back-window.jpg);
+    background-size: cover;
+}
+
+.notify__img img {
+    width: 100%;
+}
+
+.notify__title,
+.notify__description {
+    font-size: 1em;
+    margin: $spacing-unit--half 0;
+    padding-left: $spacing-unit--half;
+}
+
+/**
+* PROFILE
+*/
+
+.profile {
+    position: absolute;
+    bottom: -37.5px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-image: url(../images/me.jpg);
+    background-size: cover;
+    z-index: 9;
+    border: 5px solid $ui-color--shade;
+    //@include shadow();
+}
+
+/**
+ * ANIMATION CONFIGURATOR
+ */
+
+.anim-config {
+    display: inline-block;
+    margin: $spacing-unit auto;
+    z-index: 9999;
+    border-radius: 2px;
+    background-color: $ui-color--shade;
+    padding: $spacing-unit;
+    @include shadow();
+    transition: opacity .25s ease; 
+}
+
+.anim-config input {
+    width: 100px;
+}
+
+.anim-config label {
+    margin-right: $spacing-unit--half;
+}
+
+.anim-config.open {
+    opacity: 1;
+    transition: opacity .25s ease;
+    right: $spacing-unit--half;
+}
+
+.anim-config input {
+    margin: $spacing-unit/2 0;
+}
+
+.anim-config button {
+    width: 100%;
+    border: 0;
+    padding: $spacing-unit--half;
+    background-color: $brand-color;
+    color: $ui-color--tint;
+}
+
+.anim-config__button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    color: $ui-color;
+    padding: 0 $spacing-unit $spacing-unit/2 0;
+    display: inline-block;
+    margin-top: $spacing-unit*5;
+    display: none;
+
+    &:visited,
+    &:active,
+    &:hover,
+    &:link,
+    &:focus { color: $ui-color; }
+}
+
+.anim-config__button.enabled {
+    display: block;
+}
+
+/**
+* ABOUT SECTION
+*/
+
+.about {
+    padding-top: $spacing-unit*5;
+}
+
+.about p {
+    max-width: 768px; 
+}
+
+/**
+* WORK SECTION
+*/
+
+.work__block {
+    position: relative;
+    background-color: $ui-color--tint;
+    border-radius: 2px;
+    width: $spacing-unit*18;
+    margin: 0 auto;
+    margin-bottom: $spacing-unit*2;
+    @include shadow();
+}
+
+.work__block a {
+    color: $heading-color;
+
+    &:hover,
+    &:visited,
+    &:focus,
+    &:active {
+	color: $heading-color;  
+	text-decoration: underline;
+    }
+}
+
+.work {
+    @include outer-container;
+}
+
+.work-wrap {
+    @include span-columns(4);
+    
+    @include media($palm) {
+	@include span-columns(12);
+    }
+
+    @include media($lap) {
+	@include span-columns(12);
+    }
+
+    @include media($desk) {
+	@include omega(2n);
+        @include span-columns(6);
+	&:nth-child(3) {
+	    @include shift(3);
+	}
+    }
+}
+
+.work__image {
+    background-size: cover;
+    height: $spacing-unit*7;
+    border-radius: 2px;
+    overflow: auto;
+    box-shadow: inset 0 -75px 48px -24px rgba(0,0,0,.4);
+    @extend .va-parent;
+}
+
+.work__block h3 {
+    display: inline-block;
+    vertical-align: bottom;
+    text-align: left;
+    margin-top: 0;
+}
+
+.work__block:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 105px;
+    height: 3px;
+    width: 100%;
+    background-color: $brand-color;
+}
+
+.work__desc {
+    padding: $spacing-unit;
+    min-height: $spacing-unit*14;
+}
+
+.work__desc p {
+    margin: 0;
+}
+
+.gdc .work__image {
+    background-image: url(../images/gdc.jpg);
+}
+
+.indez .work__image {
+    background-image: url(../images/indez.jpg);
+}
+
+.scc .work__image {
+    background-image: url(../images/scc.jpg);    
+}
+
+/**
+* SKILLS AND TOOLS GRID
+*/
+
+.skills,
+.tools {
+    @include outer-container;
+}
+
+.skill-wrap,
+.tool-wrap {
+    @include span-columns(2);
+
+    @include media($lap) {
+        @include omega(3n);
+        @include span-columns(4);
+    }
+
+    @include media($palm) {
+	@include omega(2n);
+        @include span-columns(6);
+    }
+}
+
+/**
+* SKILLS AND TOOLS SECTIONS
+*/
+
+.skill__image,
+.tool__image {
+    width: 75px;
+    margin: $spacing-unit*2 auto;
+}
+
+.skill__image img,
+.tool__image img {
+    width: 100%;
+    -webkit-filter: drop-shadow(3px 4px 2px rgba(0,0,0,.2));
+    filter: drop-shadow(3px 4px 2px rgba(0,0,0,.2));
+}
+
+.skill__desc,
+.tool__desc {
+    text-align: center;
+}
+
+/**
+* CONTACT SECTION
+*/
+
+.contact span  {
+    vertical-align: middle;
+    font-size: $font-size*2;
+    line-height: $font-size*1.5;
+    margin-right: $spacing-unit;
+}
+
+.contact span:before {
+    color: $accent-color;
+}
+
+.contact ul {
+    list-style-type: none;
+}
+
+.contact li {
+    margin-bottom: $spacing-unit;
+}
+
+.contact a {
+  color: $font-color;
+  vertical-align: middle;
+  display: inline-block;
+  margin-bottom: 3px;
+}
+
+.contact .icon-github {
+    margin-left: 3px;
+    margin-right: 12px;
+}
+
+/**
+* FOOTER
+*/
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: right;
+    margin-top: $spacing-unit*3;
+    background-color: $ui-color--shade;
+}
+
+/*-----------------------------*\
+
+TRUMPS
+
+\*-----------------------------*/
+
+/**
+* Vertical Centering
+*/
+
+
+.va-parent:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.va-child {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.posab {
+    position: absolute;
+}
+
+.posrel {
+    position: relative;
+}
+
+.top {
+    z-index: 999;
+}
+
+/**
+* Helpers 
+*/
+
+/**
+ * Add/remove floats
+ */
+.float--right   { float:right!important; }
+.float--left    { float:left !important; }
+.float--none    { float:none !important; }
+
+
+/**
+ * Text alignment
+ */
+.text--left     { text-align:left  !important; }
+.text--center   { text-align:center!important; }
+.text--right    { text-align:right !important; }
+
+
+/**
+ * Font weights
+ */
+.weight--light      { font-weight:300!important; }
+.weight--normal     { font-weight:400!important; }
+.weight--semibold   { font-weight:600!important; }
+
+/**
+* Margins/Padding
+*/
+
+/**
+ * Add/remove margins
+ */
+.push           { margin:       $spacing-unit!important; }
+.push--top      { margin-top:   $spacing-unit!important; }
+.push--right    { margin-right: $spacing-unit!important; }
+.push--bottom   { margin-bottom:$spacing-unit!important; }
+.push--left     { margin-left:  $spacing-unit!important; }
+.push--ends     { margin-top:   $spacing-unit!important; margin-bottom:$spacing-unit!important; }
+.push--sides    { margin-right: $spacing-unit!important; margin-left:  $spacing-unit!important; }
+
+.push-half          { margin:       $spacing-unit/2!important; }
+.push-half--top     { margin-top:   $spacing-unit/2!important; }
+.push-half--right   { margin-right: $spacing-unit/2!important; }
+.push-half--bottom  { margin-bottom:$spacing-unit/2!important; }
+.push-half--left    { margin-left:  $spacing-unit/2!important; }
+.push-half--ends    { margin-top:   $spacing-unit/2!important; margin-bottom:$spacing-unit/2!important; }
+.push-half--sides   { margin-right: $spacing-unit/2!important; margin-left:  $spacing-unit/2!important; }
+
+.flush          { margin:       0!important; }
+.flush--top     { margin-top:   0!important; }
+.flush--right   { margin-right: 0!important; }
+.flush--bottom  { margin-bottom:0!important; }
+.flush--left    { margin-left:  0!important; }
+.flush--ends    { margin-top:   0!important; margin-bottom:0!important; }
+.flush--sides   { margin-right: 0!important; margin-left:  0!important; }
+
+
+/**
+ * Add/remove paddings
+ */
+.soft           { padding:       $spacing-unit!important; }
+.soft--top      { padding-top:   $spacing-unit!important; }
+.soft--right    { padding-right: $spacing-unit!important; }
+.soft--bottom   { padding-bottom:$spacing-unit!important; }
+.soft--left     { padding-left:  $spacing-unit!important; }
+.soft--ends     { padding-top:   $spacing-unit!important; padding-bottom:$spacing-unit!important; }
+.soft--sides    { padding-right: $spacing-unit!important; padding-left:  $spacing-unit!important; }
+
+.soft-half           { padding:       $spacing-unit/2!important; }
+.soft-half--top      { padding-top:   $spacing-unit/2!important; }
+.soft-half--right    { padding-right: $spacing-unit/2!important; }
+.soft-half--bottom   { padding-bottom:$spacing-unit/2!important; }
+.soft-half--left     { padding-left:  $spacing-unit/2!important; }
+.soft-half--ends     { padding-top:   $spacing-unit/2!important; padding-bottom:$spacing-unit/2!important; }
+.soft-half--sides    { padding-right: $spacing-unit/2!important; padding-left:  $spacing-unit/2!important; }
+
+.hard           { padding:       0!important; }
+.hard--top      { padding-top:   0!important; }
+.hard--right    { padding-right: 0!important; }
+.hard--bottom   { padding-bottom:0!important; }
+.hard--left     { padding-left:  0!important; }
+.hard--ends     { padding-top:   0!important; padding-bottom:0!important; }
+.hard--sides    { padding-right: 0!important; padding-left:  0!important; }
+
+// Add brand-color as last style rule so we can easily find it with js
+
+.brandColor {
+    background-color: $brand-color;
+}
+
