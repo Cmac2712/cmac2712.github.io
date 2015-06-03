@@ -160,6 +160,21 @@ a {
     padding-left: $spacing-unit--half;
 }
 
+.github {
+    color: #666;
+}
+
+.github a {
+    display: inline-block;
+    color: #66e;
+    padding: $spacing-unit;
+    padding-top: $spacing-unit*3;
+    padding-left: 0;
+    text-decoration: underline;
+}
+
+
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .container {
