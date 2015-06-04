@@ -625,12 +625,20 @@ input[type="radio"] {
     display: none;	
 }
 
+.swatches {
+    width: 120px;
+}
+
 .swatch {
     display: inline-block;
     border: 1px solid #999;
     height: 25px;
     width: 26px;
     border-radius: 0;
+}
+
+.swatch:nth-child(3n) {
+    margin-right: 0;    
 }
 
 input[type="radio"]:checked + label {
@@ -642,7 +650,9 @@ input[type="radio"]:checked + label {
 .blue   { background-color: #66e; }
 .green  { background-color: #ff9; }
 .purple { background-color: #f99; }
-.yellow { background-color: #789; }
+.violet { background-color: #551a8b; }
+.pink   { background-color: #E022D1; }
+.yellow { background-color: #E0DD22; }
 
 /**
 * ABOUT SECTION

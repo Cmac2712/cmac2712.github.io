@@ -14,6 +14,12 @@
 	   Animation.option('particleWidth', this.size.value);
 	   Animation.option('canvasFill', color);
 	});
+	
+	Array.prototype.forEach.call(document.getElementsByClassName('swatch'), function (elem) {
+	    elem.addEventListener('click', function () {
+		Animation.option('canvasFill', this.previousElementSibling.value); 
+	    });
+	});
 
 	Animation.init(); 
      }	    	
