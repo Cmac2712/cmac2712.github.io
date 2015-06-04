@@ -8,15 +8,14 @@
 
 define(['./notify'], function(Notify) {
 	
-	var canvasOptions = {};
-	    canvasOptions.width = 500;
-	    canvasOptions.height = 200;
+	var canvasOptions = {};console.log(window.innerWidth);
+	    canvasOptions.width = window.innerWidth/2;
+	    canvasOptions.height = window.innerWidth/2;
 	     
         var particles = {},
             particleIndex = 0,
             frame = 0,
             canvas = document.getElementById('canvasAnimation'),
-	    brandColor = '#a66',
             c = canvas.getContext('2d'),
 	    carefull = new Notify.build({
 		title: 'Carefull',
@@ -40,7 +39,7 @@ define(['./notify'], function(Notify) {
             particleHeight: 30,
             particleWidth: 30,
             particleColour: _randomColour,
-            canvasFill: brandColor, 
+            canvasFill: '#d66', 
             quantity: 15
         };
 

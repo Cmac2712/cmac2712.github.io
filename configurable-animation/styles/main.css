@@ -1,63 +1,64 @@
 /**
-*
-* @author Craig MacIntre
-* @email cmac2712@gmail.com
-*
-* CONTENTS
-* 
-* PREFACE
-* itcss..........................................Inverse Triangle CSS
-* BEM............................................Block Element Modifier naming convention
-*
-* SETTINGS
-* Typography.....................................Fonts and font stacks
-* Colors.........................................Set our brand color and UI colors
-* Spacing........................................Base spacing units for nice even spacing
-*
-* TOOLS
-* Mixins.........................................Usefull mixins
-* Bourbon........................................Library of Mixins and functions (bourbon.io)
-* Neat...........................................Grid system base on mixins for more semantic HTML (neat.bourbon.io)
-
-* GENERIC
-* Box Sizing.....................................Set box-sizing: border-box;
-* Breakpoints....................................Media Queries for different screen sizes (technically should be in settings but we need to include it after Neat)
-* Browse Happy...................................Styling for Browse Happy for unsupported browsers
-*
-* BASE
-* body...........................................Set up our root styles
-* h1-h6..........................................Headers
-* ul.............................................Lists
-* a..............................................Links
-*
-* OBJECTS
-* Wrap...........................................Keep our content contained to a max-width
-* Underline......................................Underlines for headers
-* Buttons........................................Material Design style buttons
-*
-* COMPONENTS
-* Header.........................................Header areaa
-* Navigation.....................................Nav menu
-* Notifications..................................Notification box
-* Profile........................................Profile picture
-* Animator Configurator..........................Settings menu for configuring header animation
-* About Section..................................Short Description about myself
-* Work Section...................................List of some of my projects
-* Skills and Tools Grid..........................Fluid grid setup for Skills and Tools section (identical layout)
-* Contact Section................................Contact information
-* Footer.........................................Footer area
-*
-* TRUMPS
-* Vertical Centering.............................Ghost element inline-block vertical-align: middle for aligning elements
-* Positioning....................................Absolute/relative positionsa
-* Floats.........................................Add/remove floats
-* Text Alignments................................Align text left/right/center
-* Font Weights...................................Change font weights
-* Margins/Padding................................Add/Remove margins and padding
-* .brandColor....................................Last class in the stylesheet so it can easily be found with javascript
-*
-*
-*/
+ *
+ * @author Craig MacIntre
+ * @email cmac2712@gmail.com
+ *
+ * CONTENTS
+ * 
+ * PREFACE
+ * itcss..........................................Inverse Triangle CSS
+ * BEM............................................Block Element Modifier naming convention
+ *
+ * SETTINGS
+ * Typography.....................................Fonts and font stacks
+ * Colors.........................................Set our brand color and UI colors
+ * Spacing........................................Base spacing units for nice even spacing
+ *
+ * TOOLS
+ * Mixins.........................................Usefull mixins
+ * Bourbon........................................Library of Mixins and functions (bourbon.io)
+ * Neat...........................................Grid system base on mixins for more semantic HTML (neat.bourbon.io)
+ 
+ * GENERIC
+ * Box Sizing.....................................Set box-sizing: border-box;
+ * Breakpoints....................................Media Queries for different screen sizes (technically should be in settings but we need to include it after Neat)
+ * Browse Happy...................................Styling for Browse Happy for unsupported browsers
+ *
+ * BASE
+ * body...........................................Set up our root styles
+ * h1-h6..........................................Headers
+ * ul.............................................Lists
+ * a..............................................Links
+ *
+ * OBJECTS
+ * Wrap...........................................Keep our content contained to a max-width
+ * Underline......................................Underlines for headers
+ * Buttons........................................Material Design style buttons
+ *
+ * COMPONENTS
+ * Header.........................................Header areaa
+ * Navigation.....................................Nav menu
+ * Notifications..................................Notification box
+ * Profile........................................Profile picture
+ * Animator Configurator..........................Settings menu for configuring header animation
+ * Color Swatches.................................For color choices
+ * About Section..................................Short Description about myself
+ * Work Section...................................List of some of my projects
+ * Skills and Tools Grid..........................Fluid grid setup for Skills and Tools section (identical layout)
+ * Contact Section................................Contact information
+ * Footer.........................................Footer area
+ *
+ * TRUMPS
+ * Vertical Centering.............................Ghost element inline-block vertical-align: middle for aligning elements
+ * Positioning....................................Absolute/relative positionsa
+ * Floats.........................................Add/remove floats
+ * Text Alignments................................Align text left/right/center
+ * Font Weights...................................Change font weights
+ * Margins/Padding................................Add/Remove margins and padding
+ * .brandColor....................................Last class in the stylesheet so it can easily be found with javascript
+ *
+ *
+ */
 /*----------------------------------------------------------------
 
     ITCSS http://itcss.io/
@@ -506,6 +507,12 @@ nav ul.nav-list li a:hover {
   transition: transform 0.5s ease;
   transition: -webkit-transform 0.5s ease;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); }
+  @media screen and (max-width: 400px) {
+    .notify {
+      width: 95%;
+      right: 0;
+      left: 0;
+      margin: 0 auto; } }
 
 .notify.active {
   -webkit-transform: translate3d(0, 0, 0);
@@ -518,7 +525,7 @@ nav ul.nav-list li a:hover {
   width: 100px;
   height: 100px;
   margin-right: 7.5px;
-  background-image: url(../images/view-from-back-window.jpg);
+  background-image: url(../images/warn.png);
   background-size: cover; }
 
 .notify__img img {
@@ -612,6 +619,45 @@ nav ul.nav-list li a:hover {
   .github-link:link {
     color: #666;
     text-decoration: underline; }
+
+/**
+ * Color Swatches
+ */
+.swatches {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+
+input[type="radio"] {
+  display: none; }
+
+.swatch {
+  display: inline-block;
+  border: 1px solid #999;
+  height: 25px;
+  width: 26px;
+  border-radius: 0; }
+
+input[type="radio"]:checked + label {
+  border: 1px solid #fff; }
+
+.red {
+  background-color: #e66; }
+
+.orange {
+  background-color: #DA881C; }
+
+.blue {
+  background-color: #66e; }
+
+.green {
+  background-color: #ff9; }
+
+.purple {
+  background-color: #f99; }
+
+.yellow {
+  background-color: #789; }
 
 /**
 * ABOUT SECTION
@@ -835,7 +881,7 @@ nav ul.nav-list li a:hover {
 * FOOTER
 */
 footer {
-  position: fixed;
+  position: static;
   bottom: 0;
   left: 0;
   right: 0;

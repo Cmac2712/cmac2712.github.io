@@ -1,18 +1,18 @@
  define(['./animation'], function(Animation) {
 	
-     var animConfig = document.getElementById('animConfig'),
-	 power	    = document.getElementById('power'),
-	 quantity   = document.getElementById('quantity'),
-	 size       = document.getElementById('size');
+     var animConfig = document.getElementById('animConfig');
 
      function init() {
 	animConfig.addEventListener('submit', function (e) {
 	   e.preventDefault(); 
-	   console.dir(quantity.value);
-	   Animation.option('power', power.value);
-	   Animation.option('quantity', quantity.value);
-	   Animation.option('particleHeight', size.value);
-	   Animation.option('particleWidth', size.value);
+	   var color = this.hex.value.slice(1) ? "#" + this.hex.value.slice(1) : this.color.value;
+	    console.log(color);
+
+	   Animation.option('power', this.power.value);
+	   Animation.option('quantity', this.quantity.value);
+	   Animation.option('particleHeight', this.size.value);
+	   Animation.option('particleWidth', this.size.value);
+	   Animation.option('canvasFill', color);
 	});
 
 	Animation.init(); 

@@ -55,6 +55,25 @@
 				<input id="size" type="text">
 			    </td>
 			</tr>
+			<tr>
+			    <td>
+				Color
+			    </td>
+			    <td>
+					<input id="red" name="color" type="radio" value="#e66" checked>
+					<label class="swatch red" for="red"></label>
+
+					<input id="blue" name="color" type="radio" value="#66e">
+					<label class="swatch blue" for="blue"></label>
+
+					<input id="orange" name="color" type="radio" value="#DA881C">
+					<label class="swatch orange" for="orange"></label>
+			    </td>
+			</tr>
+			<tr>
+				<td>Hexadecimal</td>
+				<td><input id="hex" type="text" value="#"></td>
+			</tr>
 		    </table>
 		   <button class="button--material">ENTER</button>
 		</form>
@@ -65,15 +84,6 @@
                 <p>&copy; Craig MacIntyre 2015</p>
             </div>
         </footer>
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
 	<script data-main="scripts/main" src="bower_components/requirejs/require.js"></script>
 </body>
 </html>
