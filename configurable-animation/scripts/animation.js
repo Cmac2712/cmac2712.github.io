@@ -18,7 +18,7 @@ define(['./notify'], function(Notify) {
             canvas = document.getElementById('canvasAnimation'),
             c = canvas.getContext('2d'),
 	    carefull = new Notify.build({
-		title: 'Carefull',
+		title: 'Careful',
 		description: 'You would probably crash your browser doing that.',
 		duration: 6000
 	    }),
