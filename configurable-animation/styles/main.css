@@ -601,6 +601,18 @@ nav ul.nav-list li a:hover {
 .anim-config__button.enabled {
   display: block; }
 
+.github-link {
+  display: block;
+  color: #666;
+  text-decoration: underline; }
+  .github-link:visited,
+  .github-link:active,
+  .github-link:focus,
+  .github-link:active,
+  .github-link:link {
+    color: #666;
+    text-decoration: underline; }
+
 /**
 * ABOUT SECTION
 */

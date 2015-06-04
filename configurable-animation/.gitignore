@@ -1,0 +1,8 @@
+node_modules/
+scripts/.notify.js.swo
+scripts/.notify.js.swp
+scripts/*swp
+scripts/*swo
+styles/*swo
+styles/*swp
+styles/.sass-cache/

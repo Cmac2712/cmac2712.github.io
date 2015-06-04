@@ -583,6 +583,21 @@ nav ul.nav-list li a:hover {
     display: block;
 }
 
+.github-link {
+    display: block;
+    color: $font-color;
+    text-decoration: underline;
+
+    &:visited,
+    &:active,
+    &:focus,
+    &:active,
+    &:link {
+	color: $font-color;
+	text-decoration: underline;
+    }
+}
+
 /**
 * ABOUT SECTION
 */
