@@ -9,8 +9,8 @@
 define(['./notify'], function(Notify) {
 	
 	var canvasOptions = {};console.log(window.innerWidth);
-	    canvasOptions.width = window.innerWidth/2;
-	    canvasOptions.height = window.innerWidth/2;
+	    canvasOptions.width  = window.innerWidth > 1080 ? 500 : window.innerWidth/2;
+	    canvasOptions.height = window.innerWidth > 1080 ? 500 : window.innerWidth/2;
 	     
         var particles = {},
             particleIndex = 0,
