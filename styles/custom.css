@@ -1,3 +1,9 @@
+/**
+ *   COLORS
+ *   green: #8EC63F
+ */
+
+
 html {
     background-color: #f8f8f8;
     line-height: 1.5;
@@ -10,7 +16,6 @@ html {
 
 #header.info {
     margin: 0;
-    border: 1px red dashed;
 }
 
 .wufoo {
@@ -20,8 +25,9 @@ html {
 }
 
 .wufoo ul li {
-    padding: 0;
+    display: block;
     width: 100%;
+    padding: 0;
 }
 
 .wufoo li.focused {
@@ -37,6 +43,7 @@ html {
     background-image: none!important;
     border: 2px #ddd solid;
     padding: 10px 20px;
+    margin-bottom: 20px;
     width: 100%;
     background-color: #fff;
 }
@@ -59,4 +66,90 @@ input[type="submit"] {
     border-radius: 3px;
     background-color: #373737;
     color: #fff;
+}
+
+/** Radio buttons */
+.wufoo input[type="radio"].field {
+    height: 0;
+    opacity: 0;
+}
+
+.wufoo input[type="radio"].field + label {
+    position: relative;
+    margin: 0;
+    padding-left: 40px;
+    padding-bottom: 0;
+    line-height: 25px;
+}
+
+.wufoo input[type="radio"].field + label:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 2px #ddd solid;
+}
+
+.wufoo input[type="radio"][disabled].field + label:before {
+    background-color: #ddd;
+}
+
+.wufoo input[type="radio"]:checked.field + label:before {
+    border: 9px #8EC63F solid;
+    background-color: #fff;
+}
+
+.wufoo input[type="radio"][disabled]:checked.field + label:before {
+    background-color: #999;
+    border: 8px #ddd solid;
+}
+
+
+/** Checkboxes */
+.wufoo input[type="checkbox"].field {
+    height: 0;
+    opacity: 0;
+}
+
+.wufoo input[type="checkbox"].field + label {
+    position: relative;
+    margin: 0;
+    padding-left: 40px;
+    padding-bottom: 0;
+    line-height: 25px;
+}
+
+.wufoo input[type="checkbox"].field + label:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    box-sizing: border-box;
+    background-color: #8EC63F;
+    //border: 0px #8EC63F solid;
+    //transition: .25s ease border;
+}
+
+.wufoo input[type="checkbox"][disabled].field + label:before {
+    background-color: #ddd;
+}
+
+.wufoo input[type="checkbox"]:checked.field + label:before {
+    content: "";
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>');
+    background-size: 70%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    //border: 9px #8EC63F solid;
+    //background-color: #fff;
+    //transition: .25s ease border;
+}
+
+.wufoo input[type="checkbox"][disabled]:checked.field + label:before {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="gray" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>');
 }
