@@ -3,7 +3,6 @@
  *   green: #8EC63F
  */
 
-
 html {
     background-color: #f8f8f8;
     line-height: 1.5;
@@ -12,6 +11,7 @@ html {
 #container {
     border: none;
     box-shadow: none;
+    padding: 45px;
 }
 
 #header.info {
@@ -24,10 +24,14 @@ html {
     font-size: inherit;
 }
 
+.wufoo * {
+    box-sizing: border-box;
+}
+
 .wufoo ul li {
     display: block;
-    width: 100%;
     padding: 0;
+    width: 100%;
 }
 
 .wufoo li.focused {
@@ -66,6 +70,14 @@ input[type="submit"] {
     border-radius: 3px;
     background-color: #373737;
     color: #fff;
+    text-transform: uppercase;
+}
+
+.wufoo li.section h3, 
+.wufoo li.section div {
+    padding: 0;
+    margin: 0;
+    font-size: inherit;
 }
 
 /** Radio buttons */
