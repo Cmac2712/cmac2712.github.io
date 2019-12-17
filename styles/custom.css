@@ -81,7 +81,7 @@ html body .wufoo h6 {
     background-image: none!important;
     border: 2px #f3f3f3 solid;
     padding: 12px 20px;
-    margin-bottom: 20px;
+    margin-bottom: 20px!important;
     width: 100%;
     background-color: #f8f8f8;
     line-height: 1.5;
@@ -93,7 +93,7 @@ html body .wufoo h6 {
 }
 
 .wufoo .select {
-    height: 40px;
+    height: 47px;
 }
 
 .wufoo label.desc {
