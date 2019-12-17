@@ -181,8 +181,10 @@ input[type="submit"]:hover {
 
 /** Checkboxes */
 .wufoo input[type="checkbox"].field {
-    height: 0;
-    opacity: 0;
+    height: 0!important;
+    opacity: 0!important;
+    margin: 0!important;
+    padding: 0!important;
 }
 
 .wufoo input[type="checkbox"].field + label {
@@ -191,6 +193,7 @@ input[type="submit"]:hover {
     padding-left: 40px;
     padding-bottom: 0;
     line-height: 25px;
+    margin-bottom: 1rem;
 }
 
 .wufoo input[type="checkbox"].field + label:before {
@@ -200,8 +203,8 @@ input[type="submit"]:hover {
     height: 25px;
     width: 25px;
     box-sizing: border-box;
-    background-color: #8EC63F;
     border-radius: 2px;
+    background-color: #ddd;
     //border: 0px #8EC63F solid;
     //transition: .25s ease border;
 }
@@ -216,6 +219,7 @@ input[type="submit"]:hover {
     background-size: 70%;
     background-position: 50%;
     background-repeat: no-repeat;
+    background-color: #8EC63F;
     //border: 9px #8EC63F solid;
     //background-color: #fff;
     //transition: .25s ease border;
@@ -223,4 +227,5 @@ input[type="submit"]:hover {
 
 .wufoo input[type="checkbox"][disabled]:checked.field + label:before {
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="gray" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>');
+    background-color: #ddd;
 }
