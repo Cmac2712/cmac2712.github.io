@@ -188,6 +188,9 @@ input[type="submit"]:hover {
     border: 8px #ddd solid;
 }
 
+form li.buttons {
+    margin-bottom: 2rem;
+}
 
 /** Checkboxes */
 .wufoo input[type="checkbox"].field {
