@@ -46,6 +46,14 @@ html body .wufoo h6 {
     margin-bottom: 1rem;
 } 
 
+#logo {
+    display: none;
+}
+
+form.wufoo {
+    margin: 0!important;
+}
+
 .wufoo ul {
     display: flex;
     flex-wrap: wrap;
