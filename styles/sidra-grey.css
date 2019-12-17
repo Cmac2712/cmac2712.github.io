@@ -1,0 +1,231 @@
+/**
+ *   COLORS
+ *   green: #8EC63F
+ */
+
+html {
+    background-color: #f8f8f8;
+    line-height: 1.5;
+}
+
+#container {
+    border: none;
+    box-shadow: none;
+    padding: 45px;
+    max-width: 650px;
+    box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, .1);
+}
+
+#header.info {
+    margin: 0;
+    padding: 0;
+}
+
+.wufoo {
+    border: none;
+    box-shadow: none;
+    font-size: inherit;
+}
+
+.wufoo * {
+    box-sizing: border-box;
+    font-family: Open Sans, Helvetica Neue, Arial, sans-serif;
+}
+
+html body .wufoo h1, 
+html body .wufoo h2, 
+html body .wufoo h3, 
+html body .wufoo h4, 
+html body .wufoo h5, 
+html body .wufoo h6 {
+    font-family: Neuron, Helvetica Neue, Arial, sans-serif;
+    font-weight: normal;
+    line-height: inherit;
+    border-top: none;
+    margin-bottom: 1rem;
+} 
+
+.wufoo ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.wufoo ul li {
+    display: block;
+    padding: 0;
+    width: 100%;
+}
+
+.wufoo ul li:nth-child(1), 
+.wufoo ul li:nth-child(2) {
+    width: 48%;
+    float: left;
+}
+
+.wufoo .info div {
+    font-size: 14px!important;
+    margin-bottom: 1rem;
+}
+
+.wufoo li.focused {
+    background-color: transparent!important;
+}
+
+.wufoo input.field, 
+.wufoo .textarea, 
+.wufoo .select 
+{
+    display: block;
+    border: none;
+    background-image: none!important;
+    border: 2px #f3f3f3 solid;
+    padding: 12px 20px;
+    margin-bottom: 20px!important;
+    width: 100%;
+    background-color: #f8f8f8;
+    line-height: 1.5;
+}
+
+.wufoo .info, 
+.wufoo .paging-context {
+    border-bottom: none;
+}
+
+.wufoo .select {
+    height: 47px;
+}
+
+.wufoo label.desc {
+    font-weight: 100!important;
+    font-size: 14px!important;
+    line-height: 1.5;
+    padding: 0 0 10px 0;
+}
+
+input[type="submit"] {
+    position: relative;
+    display: inline-block;
+    padding: 15px 70px;
+    padding-right: 80px;
+    background: none;
+    margin: 0;
+    border: none;
+    border-radius: 3px;
+    background-color: #373737;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M311.03 131.515l-7.071 7.07c-4.686 4.686-4.686 12.284 0 16.971L387.887 239H12c-6.627 0-12 5.373-12 12v10c0 6.627 5.373 12 12 12h375.887l-83.928 83.444c-4.686 4.686-4.686 12.284 0 16.971l7.071 7.07c4.686 4.686 12.284 4.686 16.97 0l116.485-116c4.686-4.686 4.686-12.284 0-16.971L328 131.515c-4.686-4.687-12.284-4.687-16.97 0z"/></svg>');
+    background-size: 18px 18px;
+    background-repeat: no-repeat;
+    background-position: 90% 50%;
+    transition: background-color .25s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #4a4a4a;
+    transition: background-color .25s ease;
+}
+
+.wufoo li.section h3, 
+.wufoo li.section div {
+    padding: 0;
+    margin: 0;
+    font-size: inherit;
+}
+
+/** Radio buttons */
+.wufoo input[type="radio"].field {
+    height: 0!important;
+    opacity: 0!important;
+    margin: 0!important;
+    padding: 0!important;
+}
+
+.wufoo input[type="radio"].field + label {
+    position: relative;
+    margin: 0;
+    padding-left: 40px;
+    padding-bottom: 0;
+    line-height: 25px;
+    margin-bottom: 1rem;
+}
+
+.wufoo input[type="radio"].field + label:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 2px #ddd solid;
+}
+
+.wufoo input[type="radio"][disabled].field + label:before {
+    background-color: #ddd;
+}
+
+.wufoo input[type="radio"]:checked.field + label:before {
+    border: 9px #8EC63F solid;
+    background-color: #fff;
+}
+
+.wufoo input[type="radio"][disabled]:checked.field + label:before {
+    background-color: #999;
+    border: 8px #ddd solid;
+}
+
+
+/** Checkboxes */
+.wufoo input[type="checkbox"].field {
+    height: 0!important;
+    opacity: 0!important;
+    margin: 0!important;
+    padding: 0!important;
+}
+
+.wufoo input[type="checkbox"].field + label {
+    position: relative;
+    margin: 0;
+    padding-left: 40px;
+    padding-bottom: 0;
+    line-height: 25px;
+    margin-bottom: 1rem;
+}
+
+.wufoo input[type="checkbox"].field + label:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    box-sizing: border-box;
+    border-radius: 2px;
+    background-color: #ddd;
+    //border: 0px #8EC63F solid;
+    //transition: .25s ease border;
+}
+
+.wufoo input[type="checkbox"][disabled].field + label:before {
+    background-color: #ddd;
+}
+
+.wufoo input[type="checkbox"]:checked.field + label:before {
+    content: "";
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>');
+    background-size: 70%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-color: #8EC63F;
+    //border: 9px #8EC63F solid;
+    //background-color: #fff;
+    //transition: .25s ease border;
+}
+
+.wufoo input[type="checkbox"][disabled]:checked.field + label:before {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="gray" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>');
+    background-color: #ddd;
+}
