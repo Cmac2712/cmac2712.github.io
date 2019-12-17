@@ -137,8 +137,10 @@ input[type="submit"]:hover {
 
 /** Radio buttons */
 .wufoo input[type="radio"].field {
-    height: 0;
-    opacity: 0;
+    height: 0!important;
+    opacity: 0!important;
+    margin: 0!important;
+    padding: 0!important;
 }
 
 .wufoo input[type="radio"].field + label {
@@ -147,6 +149,7 @@ input[type="submit"]:hover {
     padding-left: 40px;
     padding-bottom: 0;
     line-height: 25px;
+    margin-bottom: 1rem;
 }
 
 .wufoo input[type="radio"].field + label:before {
