@@ -93,7 +93,6 @@ form.wufoo {
     padding: 12px 20px;
     margin-bottom: 20px!important;
     width: 100%;
-    //background-color: #f8f8f8;
     background-color: #fff;
     line-height: 1.5;
 }
@@ -105,13 +104,20 @@ form.wufoo {
 
 .wufoo .select {
     height: 47px;
+    padding : 4px 20px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAh0lEQVQ4T93TMQrCUAzG8V9x8QziiYSuXdzFC7h4AcELOPQAdXYovZCHEATlgQV5GFTe1ozJlz/kS1IpjKqw3wQBVyy++JI0y1GTe7DCBbMAckeNIQKk/BanALBB+16LtnDELoMcsM/BESDlz2heDR3WePwKSLo5eoxz3z6NNcFD+vu3ij14Aqz/DxGbKB7CAAAAAElFTkSuQmCC')!important;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 20px) center;
 }
 
 .wufoo label.desc {
     font-weight: 100!important;
     font-size: 14px!important;
     line-height: 1.5;
-    padding: 0 0 10px 0;
+    padding: 0 0 5px 0;
 }
 
 input[type="submit"] {
@@ -167,8 +173,8 @@ input[type="submit"]:hover {
     content: "";
     position: absolute;
     left: 0;
-    height: 25px;
-    width: 25px;
+    height: 23px;
+    width: 23px;
     border-radius: 50%;
     box-sizing: border-box;
     background-color: #fff;
@@ -180,7 +186,7 @@ input[type="submit"]:hover {
 }
 
 .wufoo input[type="radio"]:checked.field + label:before {
-    border: 9px #8EC63F solid;
+    border: 8px #8EC63F solid;
     background-color: #fff;
 }
 
@@ -214,8 +220,8 @@ form li.buttons {
     content: "";
     position: absolute;
     left: 0;
-    height: 25px;
-    width: 25px;
+    height: 23px;
+    width: 23px;
     box-sizing: border-box;
     border-radius: 2px;
     background-color: #ddd;
