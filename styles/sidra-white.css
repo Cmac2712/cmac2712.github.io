@@ -109,8 +109,8 @@ form.wufoo {
     -moz-appearance: none;
     appearance: none;
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAh0lEQVQ4T93TMQrCUAzG8V9x8QziiYSuXdzFC7h4AcELOPQAdXYovZCHEATlgQV5GFTe1ozJlz/kS1IpjKqw3wQBVyy++JI0y1GTe7DCBbMAckeNIQKk/BanALBB+16LtnDELoMcsM/BESDlz2heDR3WePwKSLo5eoxz3z6NNcFD+vu3ij14Aqz/DxGbKB7CAAAAAElFTkSuQmCC')!important;
-    background-repeat: no-repeat;
-    background-position: calc(100% - 20px) center;
+    background-repeat: no-repeat!important;
+    background-position: calc(100% - 20px) center!important;
 }
 
 .wufoo label.desc {
@@ -173,8 +173,8 @@ input[type="submit"]:hover {
     content: "";
     position: absolute;
     left: 0;
-    height: 23px;
-    width: 23px;
+    height: 20px;
+    width: 20px;
     border-radius: 50%;
     box-sizing: border-box;
     background-color: #fff;
@@ -186,13 +186,13 @@ input[type="submit"]:hover {
 }
 
 .wufoo input[type="radio"]:checked.field + label:before {
-    border: 8px #8EC63F solid;
+    border: 7px #8EC63F solid;
     background-color: #fff;
 }
 
 .wufoo input[type="radio"][disabled]:checked.field + label:before {
     background-color: #999;
-    border: 8px #ddd solid;
+    border: 7px #ddd solid;
 }
 
 form li.buttons {
@@ -220,13 +220,11 @@ form li.buttons {
     content: "";
     position: absolute;
     left: 0;
-    height: 23px;
-    width: 23px;
+    height: 20px;
+    width: 20px;
     box-sizing: border-box;
     border-radius: 2px;
     background-color: #ddd;
-    //border: 0px #8EC63F solid;
-    //transition: .25s ease border;
 }
 
 .wufoo input[type="checkbox"][disabled].field + label:before {
@@ -240,9 +238,6 @@ form li.buttons {
     background-position: 50%;
     background-repeat: no-repeat;
     background-color: #8EC63F;
-    //border: 9px #8EC63F solid;
-    //background-color: #fff;
-    //transition: .25s ease border;
 }
 
 .wufoo input[type="checkbox"][disabled]:checked.field + label:before {
