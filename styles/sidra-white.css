@@ -269,3 +269,9 @@ form li.buttons {
     border: 1px solid rgba(255,173,30,0.2);
     background-color: #fffade!important;
 }
+
+.wufoo ul #errorLi + li, 
+.wufoo ul #errorLi + li + li {
+    width: 48%;
+    float: left;
+}
