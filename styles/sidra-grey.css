@@ -247,3 +247,25 @@ form li.buttons {
     background-color: #ddd;
 }
 
+/**
+ * ERROR MESSAGES
+ */
+
+#errorLi {
+    width: 100%;
+    top: 17px!important;
+    border: 1px solid rgba(255,173,30,0.2)!important;
+    background-color: #fffade!important;
+    margin-bottom: 50px;
+    border-radius: 2px;
+}
+
+[id="errorMsgLbl"] {}
+
+[id="errorMsg"] {}
+
+.instruct {
+    top: 17px!important;
+    border: 1px solid rgba(255,173,30,0.2);
+    background-color: #fffade!important;
+}
