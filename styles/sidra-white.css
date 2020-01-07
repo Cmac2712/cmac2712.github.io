@@ -258,7 +258,7 @@ form li.buttons {
     background-color: #fffade!important;
     margin-bottom: 50px;
     border-radius: 2px;
-}
+}j
 
 [id="errorMsgLbl"] {}
 
@@ -268,6 +268,28 @@ form li.buttons {
     top: 17px!important;
     border: 1px solid rgba(255,173,30,0.2);
     background-color: #fffade!important;
+}
+
+form li.error {
+    background: none!important;
+}
+
+#errorMsg b, 
+form.wufoo p.error, 
+.wufoo .error label {
+    width: 100%;
+    top: 17px!important;
+    border-radius: 2px!important;
+    padding: 8px 10px 10px 10px!important;
+    margin-bottom: 20px!important;
+    background-color: #FFDFDF !important;
+    font-size: 12px!important;
+    line-height: 1.5!important;
+    font-weight: normal!important;
+}
+
+#errorMsg b {
+    padding: 3px 6px!important;
 }
 
 .wufoo ul #errorLi + li, 
